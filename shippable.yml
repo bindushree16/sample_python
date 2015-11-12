@@ -7,7 +7,10 @@ python:
   - 3.3
   - 3.4
   - pypy
-  
+
+env:
+  - secure: DLvrEza9Zr06DN6H8ukWdlnfoYbDTEsyenVmfJMD9OxdLatriAKfgCj385FhyXrLQf1dqZzks9FsM80wZElFjFmZGzqPF2919ZVA3AK/g9QFmDwrYuqGj3um1FcTTGqzErGHbJbwiNC5qeqyQRa7i3LNgofki1BfCz1d1zTTHEMs7oncVGH34E8RULGBkTtpQk/c8ihT3pvYt0+FVsIi9Qd+E4epuy17aqbJtV+YzIZFfVqOYu5HNstNSK8C0HSQKGfCbOTUH0UdL3xPH1MdcDoxrqX6I9bNJSKa/tV0ayIdbcfCdPsprGVQwq/r+nk+lVIxTc7DNeWKDdYRBipOgg==
+
 install:
   - pip install -r requirements.txt
 
@@ -17,6 +20,8 @@ before_script:
   - mkdir -p shippable/codecoverage
 
 script:
+  - echo 'here comes the secret!'
+  - echo $SECRET
   - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
   - which python && coverage run --branch test.py
   - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
