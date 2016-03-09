@@ -7,19 +7,18 @@ env:
   global:
     - TEST_VAR=reallyAwesomeString
 
-install:
-  - pip install -r requirements.txt
+build:
+  pre_ci_boot:
+    image_name: library/busybox
+    image_tag: latest
+    pull: true
+  cache: true
+  ci:
+    - echo "do some things"
+    - shippable_cache_container
+    - echo "more things"
+  on_success:
+    - echo "success!"
 
-# Make folders for the reports
-before_script:
-  - mkdir -p shippable/testresults
-  - mkdir -p shippable/codecoverage
-
-script:
-  - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
-  - which python && coverage run --branch test.py
-  - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
-
-notifications:
-  email:
-   - exampleone@org.com
+  on_failure:
+    - echo "failed."
