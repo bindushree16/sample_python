@@ -9,8 +9,8 @@ env:
 
 build:
   pre_ci_boot:
-    image_name: library/busybox
-    image_tag: latest
+    image_name: python
+    image_tag: 2.7
     pull: true
   cache: true
   ci:
