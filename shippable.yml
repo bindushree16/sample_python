@@ -5,13 +5,14 @@ python:
 
 env:
   global:
-    - TEST_VAR=reallyAwesomeString
+    - secure: odC9H/ztX2+TVpuFTd67o0KwYr9ZkVpYhy9lvz+Z1/BYI4RhbfGYv9Orf+3Dcb6v+KebN16LsqjgYY9Xr3MNFZ9g1ocYOa8EzONGxuQefM9dAl8QxDwJTAhFc0GMxSu8IU35zi5pXS6Zl8WkrkRV6x5kMa+BYzZofyWo94439Q+7IdXOHJnazxCPc0S7OvouzvK8e4iNH8hQodZKtgqsf71DTI8tUzV8iQz+oJbcV6p3YXLNbocrm6YNJDSFUIqvAmc70EmlFR7VLJrLrmevSb5EI6FAEsA6GbyXObI2wlPLSulBVjl0DcKqVhYe65drMkp8FBx4edJDyyEYxIURqw== 
+    - secure: IClLzKoHcJ88RGznpGccmTaZ0CnC2DAYze4jxMTvbDxSZtwKjuC3PtRL1W3Y+dpXSWulW8ePeP43ODhGpTJ/gNDcEf3CkxIhrJsDO/MFyQZykf6ACRx5nJtNwEEBgAsawpCu4H7oynYpJDPNxLWIxR0huiYFSG4gPUUirvskIrlJTd8k98da5qEnq7Ekoa8sSeu5nRw7aYAMrLcGibyCED3DADQuQ0cQ/4PUQNV5D/6eNQjQESBTH85JtG4uZlJWB/QxpUafEjgwJYUUdJ8/XYkbN+B8X+TNjZ7oYf5PMcXwMpC7zJqFJuOtS4Ay41p0LFdY6TGYXmIXmNnfA40rTg== 
 
-install:
-  - pip install -r requirements.txt
 
 # Make folders for the reports
 before_script:
+  - echo $COMPOSER_AUTH
+  - echo $COMPOSER_AUTH2
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
 
