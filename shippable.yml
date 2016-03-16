@@ -20,7 +20,7 @@ build:
     - ['ls', 'ls']
     - ['ls -la', ['ls -la', 'ls -la']]
     - ['pwd', ['pwd', ['pwd', 'pwd']]]
-    - cd nonsenseDir
+
   on_success:
     - ls -la
     - ls -la
