@@ -7,24 +7,32 @@ env:
   global:
     - TEST_VAR=reallyAwesomeString
 
-install:
-  - pip install -r requirements.txt
-
-# Make folders for the reports
-before_script:
-  - mkdir -p shippable/testresults
-  - mkdir -p shippable/codecoverage
-
-script:
-  - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
-  - which python && coverage run --branch test.py
-  - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
-  - ls
-  - ls
-  - ['string1', 'string2']
-  - ['string3', ['nestedString1', 'nestedString2']]
-  - ['string4', ['nestedString3', ['nestAgain1', 'nestAgain2']]]
-
+build:
+  ci:
+    - pip install -r requirements.txt
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
+    - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
+    - which python && coverage run --branch test.py
+    - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
+    - ls
+    - ls
+    # - ['string1', 'string2']
+    # - ['string3', ['nestedString1', 'nestedString2']]
+    # - ['string4', ['nestedString3', ['nestAgain1', 'nestAgain2']]]
+  on_success:
+    - ls -la
+    - ls -la
+    - ['string1', 'string2']
+    - ['string3', ['nestedString1', 'nestedString2']]
+    - ['string4', ['nestedString3', ['nestAgain1', 'nestAgain2']]]
+  on_failure:
+    - ls -la
+    - ls -la
+    - ['string1', 'string2']
+    - ['string3', ['nestedString1', 'nestedString2']]
+    - ['string4', ['nestedString3', ['nestAgain1', 'nestAgain2']]]
+    
 notifications:
   email:
    - exampleone@org.com
