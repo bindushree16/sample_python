@@ -24,6 +24,7 @@ script:
   - ['ls', 'ls']
   - ['ls -la', ['ls -la', 'ls -la']]
   - ['pwd', ['pwd', ['pwd', 'pwd']]]
+  - cd nonsenseDir
 
 after_success:
   - ls -la
