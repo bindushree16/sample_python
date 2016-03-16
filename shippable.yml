@@ -21,22 +21,23 @@ script:
   - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
   - ls
   - ls
-  # - ['string1', 'string2']
-  # - ['string3', ['nestedString1', 'nestedString2']]
-  # - ['string4', ['nestedString3', ['nestAgain1', 'nestAgain2']]]
+  - ['ls', 'ls']
+  - ['ls -la', ['ls -la', 'ls -la']]
+  - ['pwd', ['pwd', ['pwd', 'pwd']]]
 
 after_success:
   - ls -la
   - ls -la
-  # - ['string1', 'string2']
-  # - ['string3', ['nestedString1', 'nestedString2']]
-  # - ['string4', ['nestedString3', ['nestAgain1', 'nestAgain2']]]
+  - ['ls', 'ls']
+  - ['ls -la', ['ls -la', 'ls -la']]
+  - ['pwd', ['pwd', ['pwd', 'pwd']]]
+  
 after_failure:
   - ls -la
   - ls -la
-  # - ['string1', 'string2']
-  # - ['string3', ['nestedString1', 'nestedString2']]
-  # - ['string4', ['nestedString3', ['nestAgain1', 'nestAgain2']]]
+  - ['ls', 'ls']
+  - ['ls -la', ['ls -la', 'ls -la']]
+  - ['pwd', ['pwd', ['pwd', 'pwd']]]
 
 notifications:
   email:
