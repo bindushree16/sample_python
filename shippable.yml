@@ -19,6 +19,8 @@ script:
   - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
   - which python && coverage run --branch test.py
   - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
+  - ls
+  - ls
   - ['string1', 'string2']
   - ['string3', ['nestedString1', 'nestedString2']]
   - ['string4', ['nestedString3', ['nestAgain1', 'nestAgain2']]]
