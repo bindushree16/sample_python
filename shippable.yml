@@ -25,6 +25,19 @@ script:
   - ['string3', ['nestedString1', 'nestedString2']]
   - ['string4', ['nestedString3', ['nestAgain1', 'nestAgain2']]]
 
+after_success:
+  - ls -la
+  - ls -la
+  - ['string1', 'string2']
+  - ['string3', ['nestedString1', 'nestedString2']]
+  - ['string4', ['nestedString3', ['nestAgain1', 'nestAgain2']]]
+after_failure:
+  - ls -la
+  - ls -la
+  - ['string1', 'string2']
+  - ['string3', ['nestedString1', 'nestedString2']]
+  - ['string4', ['nestedString3', ['nestAgain1', 'nestAgain2']]]
+
 notifications:
   email:
    - exampleone@org.com
