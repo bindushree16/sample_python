@@ -9,6 +9,8 @@ env:
 
 build:
   ci:
+    - echo $SHIPPABLE_BUILD_DIR
+    - echo $SHIPPABLE_REPO_DIR
     - pip install -r requirements.txt
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
