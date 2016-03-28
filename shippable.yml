@@ -7,13 +7,12 @@ env:
   global:
     - TEST_VAR=reallyAwesomeString
 
-pre_ci_boot:
-  image_name: stephanielingwood/band-name-generator
-  image_tag: docker.8
-  pull: true
-  options: "-e HOME=/root" 
-
 build:
+  pre_ci_boot:
+    image_name: stephanielingwood/band-name-generator
+    image_tag: docker.8
+    pull: true
+    options: "-e HOME=/root" 
   ci: 
     - pip install -r requirements.txt
     - mkdir -p shippable/testresults
