@@ -8,9 +8,9 @@ env:
     - TEST_VAR=reallyAwesomeString
 
 pre_ci_boot:
-    image_name: stephanielingwood/band-name-generator
-    image_tag: docker.8
-    pull: true
+  image_name: stephanielingwood/band-name-generator
+  image_tag: docker.8
+  pull: true
 
 build:
   ci: 
