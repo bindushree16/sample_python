@@ -18,6 +18,6 @@ build:
 
 integrations:
     hub:
-      - integrationName: stephDocker
+      - integrationName: stephanieTestDocker
         type: docker
 
