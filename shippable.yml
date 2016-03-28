@@ -11,6 +11,7 @@ pre_ci_boot:
   image_name: stephanielingwood/band-name-generator
   image_tag: docker.8
   pull: true
+  options: "-e HOME=/root" 
 
 build:
   ci: 
