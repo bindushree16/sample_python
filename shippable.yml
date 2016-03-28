@@ -9,8 +9,8 @@ env:
 
 build:
   pre_ci_boot:
-    image_name: stephanielingwood/band-name-generator
-    image_tag: docker.8
+    image_name: stephanielingwood/radar-api2
+    image_tag: master.53
     pull: true
     options: "-e HOME=/root" 
   ci: 
@@ -23,6 +23,6 @@ build:
 
 integrations:
     hub:
-      - integrationName: stephanieTestDocker
+      - integrationName: stephDocker
         type: docker
 
