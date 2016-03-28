@@ -7,19 +7,17 @@ env:
   global:
     - TEST_VAR=reallyAwesomeString
 
-install:
-  - pip install -r requirements.txt
+build:
+  ci: 
+    - pip install -r requirements.txt
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
+    - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
+    - which python && coverage run --branch test.py
+    - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
 
-# Make folders for the reports
-before_script:
-  - mkdir -p shippable/testresults
-  - mkdir -p shippable/codecoverage
+integrations:
+    hub:
+      - integrationName: stephDocker
+        type: docker
 
-script:
-  - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
-  - which python && coverage run --branch test.py
-  - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
-
-notifications:
-  email:
-   - exampleone@org.com
