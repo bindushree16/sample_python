@@ -5,8 +5,6 @@ python:
 
 env:
   matrix:
-    - FOO1="bar1"
-    - FOO2="bar2"
   global:
 
 build:
