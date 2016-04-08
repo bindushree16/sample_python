@@ -3,23 +3,6 @@ language: python
 python:
   - 2.7
 
-env:
-  # -
-  # -
-  # -
-  global:
-    - null
-    - 4
-    - false
-    - undefined
-    - []
-  matrix:
-    - null
-    - 4
-    - false
-    - undefined
-    - []
-
 build:
   ci:
     - echo true
