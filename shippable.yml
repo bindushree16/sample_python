@@ -5,8 +5,9 @@ python:
 
 env:
   -
-  -
-  -
+  - 4
+  - false
+  - []
   # global:
   #   - null
   #   - 4
