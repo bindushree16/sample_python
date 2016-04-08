@@ -5,11 +5,17 @@ python:
 
 env:
   global:
+    - null
     - 4
     - false
     - undefined
     - []
-    
+  matrix:
+    - null
+    - 4
+    - false
+    - undefined
+    - []
 
 build:
   ci:
