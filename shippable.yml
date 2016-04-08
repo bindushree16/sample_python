@@ -5,7 +5,6 @@ python:
 
 env:
   global:
-    -
     - 4
     - false
     - undefined
