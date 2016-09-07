@@ -1,0 +1,6 @@
+sut:
+  build: .
+  links:
+    - redis
+  working_dir: /app
+  command: bash -c "npm install && npm test"
