@@ -1,9 +1,10 @@
- two float values
-val1 = 100.99
-val2 = 76.15
+# This program adds two numbers
 
-# Adding the two given numbers
-sum = float(val1) + float(val2)
+num1 = 1.5
+num2 = 6.3
 
-# Displaying the addition result
-print("The sum of given numbers is: ", sum)
+# Add two numbers
+sum = float(num1) + float(num2)
+
+# Display the sum
+print('The sum of {0} and {1} is {2}'.format(num1, num2, sum))
