@@ -1,14 +1,9 @@
-class App():
-    def __init__(self):
-        self.var1 = 15
+ two float values
+val1 = 100.99
+val2 = 76.15
 
-    def calculate(self):
-        self.result = self.var1 * 4 + 2
+# Adding the two given numbers
+sum = float(val1) + float(val2)
 
-    def retrieve(self):
-        return self.result
-
-if __name__ == "__main__":
-    app = App()
-    app.calculate()
-    print(app.retrieve)
+# Displaying the addition result
+print("The sum of given numbers is: ", sum)
